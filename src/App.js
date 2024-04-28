@@ -1,14 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-import TransactionHolder from './components.js/Home';
+import React from 'react';
+import './App.css'; // Import your CSS file
+import TransactionHolder from './components/Home';
 
 function App() {
+  const onReset = () => {}; // Define onReset function
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <header className="header">
+        <h1>Bank of Flatiron</h1>
       </header>
-      <TransactionContainer />
+
+      <TransactionHolder onReset={onReset} />
+
+      <footer className="footer">
+        &copy; 2024 My Bank
+      </footer>
     </div>
   );
 }

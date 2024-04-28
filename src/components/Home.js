@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TransactionTable from "./TransactionTable";
-import TransactionForm from "./TransactionForm"
+import TransactionForm from "./TransactionForm";
 import SearchTransactions from "./SearchTransactions";
 
 function TransactionHolder() {
@@ -51,9 +51,22 @@ function TransactionHolder() {
         }
     };
 
+    // Function to handle search and reset
+    const handleSearch = (filteredTransactions) => {
+        setTransactions(filteredTransactions);
+    };
+
+    const handleReset = () => {
+        setTransactions(transactions); // Reset transactions to original
+    };
+
     return (
         <div>
-            <SearchTransactions transactions={transactions} onSearch={handleSearch} />
+            <SearchTransactions 
+                transactions={transactions} 
+                onSearch={handleSearch} 
+                onReset={handleReset} // Pass handleReset function
+            />
             <h1>My Transactions</h1>
             {/* TransactionForm component */}
             <TransactionForm
