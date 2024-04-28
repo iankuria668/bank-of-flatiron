@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TransactionTable from "./TransactionTable";
+import TransactionForm from "./TransactionForm"
 
 function TransactionHolder() {
     // Defining our transactions array
@@ -52,8 +53,12 @@ function TransactionHolder() {
     return (
         <div>
             <h1>My Transactions</h1>
-            
-
+            {/* TransactionForm component */}
+            <TransactionForm
+                newTransaction={newTransaction}
+                handleInputChange={handleInputChange}
+                addTransaction={addTransaction}/>
+                
             {/* TransactionTable component */}
             <TransactionTable transactions={transactions} />
 

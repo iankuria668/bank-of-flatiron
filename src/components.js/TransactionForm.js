@@ -37,3 +37,5 @@ function TransactionForm({ newTransaction, handleInputChange, addTransaction }) 
         </form>
     );
 }
+
+export default TransactionForm
