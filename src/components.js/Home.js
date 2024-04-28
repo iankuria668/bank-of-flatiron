@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TransactionTable from "./TransactionTable";
 import TransactionForm from "./TransactionForm"
+import SearchTransactions from "./SearchTransactions";
 
 function TransactionHolder() {
     // Defining our transactions array
@@ -52,6 +53,7 @@ function TransactionHolder() {
 
     return (
         <div>
+            <SearchTransactions transactions={transactions} onSearch={handleSearch} />
             <h1>My Transactions</h1>
             {/* TransactionForm component */}
             <TransactionForm
